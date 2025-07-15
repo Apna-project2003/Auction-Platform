@@ -55,7 +55,7 @@ export const register = catchAsyncErrors(async (req, res, next) => {
   const cloudinaryResponse = await cloudinary.uploader.upload(
     profileImage.tempFilePath,
     {
-      folder: "MERN_AUCTION_PLATFORM_USERS",
+      folder: "AUCTION_PLATFORM",
     }
   );
   if (!cloudinaryResponse || cloudinaryResponse.error) {
