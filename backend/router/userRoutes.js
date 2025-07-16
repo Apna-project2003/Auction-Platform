@@ -1,4 +1,5 @@
 import express from "express";
+// import { getProfile, login, register } from "../controllers/userController.js";
 import {
   fetchLeaderboard,
   getProfile,
@@ -6,13 +7,13 @@ import {
   logout,
   register,
 } from "../controllers/userController.js";
-import { isAuthenticated } from "../middlewares/auth.js";
+ import { isAuthenticated } from "../middlewares/auth.js";
 
 const router = express.Router();
 
 router.post("/register", register);
-router.post("/login", login);
-router.get("/me", isAuthenticated, getProfile);
+ router.post("/login", login);
+ router.get("/me", isAuthenticated, getProfile);
 router.get("/logout", isAuthenticated, logout);
 router.get("/leaderboard", fetchLeaderboard);
 

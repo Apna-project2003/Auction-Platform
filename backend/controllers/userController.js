@@ -92,7 +92,11 @@ export const register = catchAsyncErrors(async (req, res, next) => {
       },
     },
   });
-  generateToken(user, "User Registered.", 201, res);
+     generateToken(user, "User Registered.", 201, res);
+  // res.status(201).json({
+  //   success: true,
+  //   message:"User Registered",
+  // });
 });
 
 export const login = catchAsyncErrors(async (req, res, next) => {
@@ -108,7 +112,12 @@ export const login = catchAsyncErrors(async (req, res, next) => {
   if (!isPasswordMatch) {
     return next(new ErrorHandler("Invalid credentials.", 400));
   }
-  generateToken(user, "Login successfully.", 200, res);
+   generateToken(user, "Login successfully.", 200, res);
+
+  //  res.status(201).json({
+  //   success: true,
+  //   message:"Login Successfully",
+  // });
 });
 
 export const getProfile = catchAsyncErrors(async (req, res, next) => {
